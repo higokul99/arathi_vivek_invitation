@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, MapPin } from 'lucide-react';
+import arathiAndVivek from '../assets/arathi_and_vivek.webp';
+import img1 from '../assets/img1.png';
+import img2 from '../assets/img2.png';
 
 const MainInvitation = () => {
   const containerRef = useRef(null);
@@ -28,7 +31,7 @@ const MainInvitation = () => {
           className="hero-image-container"
           style={{ scale, opacity, y }}
         >
-          <img src="/arathi_and_vivek.webp" alt="Arathi and Vivek" className="hero-image" />
+          <img src={arathiAndVivek} alt="Arathi and Vivek" className="hero-image" />
           <div className="hero-overlay">
             <div className="hero-text">
               <h1 className="text-shimmer">A Beautiful Beginning</h1>
@@ -120,7 +123,7 @@ const MainInvitation = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img src="/img1.png" alt="Arathi and Vivek" />
+          <img src={img1} alt="Arathi and Vivek" />
         </motion.div>
 
         <motion.div
@@ -172,7 +175,7 @@ const MainInvitation = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img src="/img2.png" alt="Arathi and Vivek" />
+          <img src={img2} alt="Arathi and Vivek" />
         </motion.div>
 
         <motion.div
