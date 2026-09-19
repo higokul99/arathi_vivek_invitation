@@ -9,11 +9,14 @@ function App() {
   const [isOpened, setIsOpened] = useState(false);
   const audioRef = useRef(null);
 
-  const handleOpen = () => {
-    setIsOpened(true);
+  const handlePlayAudio = () => {
     if (audioRef.current) {
       audioRef.current.play().catch(e => console.log('Audio autoplay blocked or failed:', e));
     }
+  };
+
+  const handleOpen = () => {
+    setIsOpened(true);
   };
 
   return (
@@ -22,7 +25,7 @@ function App() {
 
       <AnimatePresence>
         {!isOpened && (
-          <Envelope key="envelope" onOpen={handleOpen} />
+          <Envelope key="envelope" onOpen={handleOpen} onInteract={handlePlayAudio} />
         )}
       </AnimatePresence>
 

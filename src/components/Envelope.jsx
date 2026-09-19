@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import RibbonSVG from './RibbonSVG';
 
-const Envelope = ({ onOpen }) => {
+const Envelope = ({ onOpen, onInteract }) => {
   const [isUnfolded, setIsUnfolded] = useState(false);
 
   const handleOpen = () => {
+    if (onInteract) onInteract();
     setIsUnfolded(true);
     // Add a slight delay to let the ribbon unfold before the envelope fades out
     setTimeout(() => {
